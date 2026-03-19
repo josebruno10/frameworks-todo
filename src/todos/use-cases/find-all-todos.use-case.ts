@@ -11,7 +11,7 @@ export class FindAllTodosUseCase {
   async execute() {
     try {
       this.logger.log('Finding all todos...');
-      const todos = await this.findAllTodosRepository.execute();
+      const todos = await this.findAllTodosRepository.findAll();
       this.logger.log('Todos found successfully');
       return todos;
     } catch (error) {

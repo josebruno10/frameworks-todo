@@ -15,6 +15,10 @@ import {
 
 export class CreateTodoDto {
   @IsString()
+  @IsNotEmpty()
+  userId: string;
+
+  @IsString()
   title: string;
 
   @IsString()

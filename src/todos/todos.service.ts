@@ -1,8 +1,13 @@
 import { Injectable } from '@nestjs/common';
 import { CreateTodoDto } from './dto/create-todo.dto';
 import { UpdateTodoDto } from './dto/update-todo.dto';
-import { CreateTodoUseCase, DeleteTodoUseCase, UpdateTodoUseCase, FindAllTodosUseCase, FindTodoByIdUseCase } from './use-cases';
-
+import {
+  CreateTodoUseCase,
+  DeleteTodoUseCase,
+  UpdateTodoUseCase,
+  FindAllTodosUseCase,
+  FindTodoByIdUseCase,
+} from './use-cases';
 @Injectable()
 export class TodosService {
   constructor(
@@ -11,7 +16,6 @@ export class TodosService {
     private readonly updateTodoUseCase: UpdateTodoUseCase,
     private readonly findAllTodosUseCase: FindAllTodosUseCase,
     private readonly findTodoByIdUseCase: FindTodoByIdUseCase,
-
   ) {}
   async create(data: CreateTodoDto) {
     return await this.createTodoUseCase.execute(data);
